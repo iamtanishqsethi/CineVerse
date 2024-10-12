@@ -6,11 +6,12 @@ import { createUserWithEmailAndPassword,signInWithEmailAndPassword ,updateProfil
 import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {addUser} from "../Utils/userSlice";
+import {USER_AVATAR_DEFAULT} from "../Utils/constants";
 
 const Login=()=>{
     const [isSignInForm,setisSignInForm]=useState(true)
     const [errorMessage,setErrorMessage]=useState(null);
-    const navigate=useNavigate()
+
     const dispatch=useDispatch();
 
     const email=useRef(null)
@@ -38,12 +39,14 @@ const Login=()=>{
                     console.log(user)
 
                     updateProfile(user, {
-                        displayName: name.current.value, photoURL: "https://avatars.githubusercontent.com/u/148245926?v=4"
+                        displayName: name.current.value, photoURL: USER_AVATAR_DEFAULT
                     }).then(() => {
                         // Profile updated then navigate
                         const {uid,email,displayName,photoURL} = auth.currentUser;
                         dispatch(addUser({uid:uid,email:email,displayName:displayName,photoURL:photoURL}));
-                        navigate("/browse")
+
+                        //no need to navigate from here now as the onAuthStateChange in header will manage it
+                        // navigate("/browse")
                     }).catch((error) => {
                         // An error occurred
                         setErrorMessage(error.message())
@@ -63,9 +66,10 @@ const Login=()=>{
                 .then((userCredential) => {
                     // Signed in
                     const user = userCredential.user;
-                    console.log(user)
 
-                    navigate("/browse")
+
+                    //no need to navigate from here now as the onAuthStateChange in header will manage it
+                    // navigate("/browse")
 
                 })
                 .catch((error) => {
@@ -80,14 +84,7 @@ const Login=()=>{
     return(
 
         <div className={""}>
-            <div
-                className={"  absolute px-4 py-2 bg-gradient-to-b from-black z-10 w-full"}>
-                <img
-                    src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
-                    alt="logo"
-                    className={"w-40 "}
-                />
-            </div>
+            <Header/>
             <div className={"absolute bg-black"}>
                 <img
                     src="https://assets.nflxext.com/ffe/siteui/vlv3/4d2c5849-b306-4884-9036-6211f7ee0178/web/IN-en-20240930-TRIFECTA-perspective_1e1ca6cd-9e2d-4e9d-9e4b-ba0c2d3a0e31_small.jpg"

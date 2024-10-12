@@ -8,7 +8,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+  </React.StrictMode>//everything will happen twice in local due to strict mode
+    //react does extra rendering to check inconsistency in rendering cycles
 );
 
 // If you want to start measuring performance in your app, pass a function
