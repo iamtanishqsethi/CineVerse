@@ -7,10 +7,10 @@ const MainContainer=()=>{
     if(movies===null) return;//this is know as early return to avoid null error when fetching
     const mainMovie=movies[0]
     //showing the trailer and title of first movie from list of movies
-    const {title,overview,id}=mainMovie;
+    const {original_title,overview,id}=mainMovie;
     return(
         <div>
-            <VideoTitle title={title} overview={overview}/>
+            <VideoTitle title={original_title} overview={overview}/>
             <VideoBackground moveId={id}/>
         </div>
     )

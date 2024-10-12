@@ -26,6 +26,10 @@
 - fetch data for trailer video 
 - update the store with trailer video data 
 - embedded the yt video and make it autoplay and mute
+- build secondary component 
+- build movie list 
+- build movie card 
+- 
 
 # Features :
 - Login/ SignUp page 

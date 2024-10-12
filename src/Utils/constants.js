@@ -10,3 +10,5 @@ export const API_OPTIONS = {
     }
 };
 export const YOUTUBE_URL="https://www.youtube.com/watch?v="
+
+export const IMG_URL="https://image.tmdb.org/t/p/w500"
