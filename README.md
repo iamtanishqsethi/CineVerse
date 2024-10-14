@@ -29,7 +29,10 @@
 - build secondary component 
 - build movie list 
 - build movie card 
-- 
+- GPT search feature
+- GPT search page
+- GPT search Bar
+- Multilingual feature
 
 # Features :
 - Login/ SignUp page 

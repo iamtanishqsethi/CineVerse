@@ -6,7 +6,7 @@ import { createUserWithEmailAndPassword,signInWithEmailAndPassword ,updateProfil
 import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {addUser} from "../Utils/userSlice";
-import {USER_AVATAR_DEFAULT} from "../Utils/constants";
+import {BG_URL, USER_AVATAR_DEFAULT} from "../Utils/constants";
 
 const Login=()=>{
     const [isSignInForm,setisSignInForm]=useState(true)
@@ -87,7 +87,7 @@ const Login=()=>{
             <Header/>
             <div className={"absolute bg-black"}>
                 <img
-                    src="https://assets.nflxext.com/ffe/siteui/vlv3/4d2c5849-b306-4884-9036-6211f7ee0178/web/IN-en-20240930-TRIFECTA-perspective_1e1ca6cd-9e2d-4e9d-9e4b-ba0c2d3a0e31_small.jpg"
+                    src={BG_URL}
                     alt="bg"
                     className={"opacity-60"}
                 />

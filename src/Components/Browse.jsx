@@ -5,6 +5,8 @@ import SecondaryContainer from "./SecondaryContainer";
 import usePopularMovies from "../Hooks/usePopularMovies";
 import useTopRatedMovies from "../Hooks/useTopRatedMovies";
 import useUpcomingMovies from "../Hooks/useUpcomingMovies";
+import GptSearch from "./GptSearch";
+import {useSelector} from "react-redux";
 
 
 const Browse=()=>{
@@ -13,6 +15,8 @@ const Browse=()=>{
     usePopularMovies()
     useTopRatedMovies()
     useUpcomingMovies()
+    const showGPTSearch=useSelector(store=>store.gpt.showGPT)
+
     return(
         <div >
             <Header/>
@@ -24,8 +28,13 @@ const Browse=()=>{
              - movie lists * n
                    - cards * n
               */}
-            <MainContainer/>
-            <SecondaryContainer/>
+            {showGPTSearch ? <GptSearch/>:<>
+                <MainContainer/>
+                <SecondaryContainer/>
+            </>
+
+            }
+            {/*need to pass  the two components inside a tag as unlike html jsx can only return 1 component /1 element */}
         </div>
     )
 
