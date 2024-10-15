@@ -6,7 +6,7 @@ export const API_OPTIONS = {
     method: 'GET',
     headers: {
         accept: 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ZjY3MWY2OWFmOGEwNzQxMmFmMjZlYzkzZTg5ZTVmNyIsIm5iZiI6MTcyODczMzQ0MC43MjU1MDcsInN1YiI6IjY3MGE1ZjgzZjU4YTkyMDZhYTQwNjdhMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.1yUKThCgTUTmrA2qLJRirUsDPf6nlgC_wiyKahtHCL4'
+        Authorization: 'Bearer' + process.env.REACT_APP_TMDB_KEY
     }
 };
 export const YOUTUBE_URL="https://www.youtube.com/watch?v="
@@ -17,6 +17,6 @@ export const BG_URL="https://assets.nflxext.com/ffe/siteui/vlv3/4d2c5849-b306-48
 
 export const SUPPORTED_LANGUAGES=[{identifier:"en",name:"English"},{identifier:"hi",name:"Hindi"},{identifier:"spa",name:"Spanish"}]
 
-export const OPEN_AI_KEY="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"
 
-export const GEMINI_AI_KEY="AIzaSyB4RViMoCmeN50e9cLh8UaMhAmWYyCHw34"
+
+export const GEMINI_AI_KEY=process.env.REACT_APP_KEY
