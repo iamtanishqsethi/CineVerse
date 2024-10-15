@@ -6,12 +6,13 @@ const MainContainer=()=>{
     const movies=useSelector(store => store?.movies?.nowPlayingMovies)
     if(movies===null) return;//this is know as early return to avoid null error when fetching
     const mainMovie=movies[0]
+    // console.log(mainMovie)
     //showing the trailer and title of first movie from list of movies
     const {original_title,overview,id}=mainMovie;
     return(
         <div>
             <VideoTitle title={original_title} overview={overview}/>
-            <VideoBackground moveId={id}/>
+            <VideoBackground movieId={id}/>
         </div>
     )
 }

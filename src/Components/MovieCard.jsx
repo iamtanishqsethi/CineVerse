@@ -1,6 +1,8 @@
 import {IMG_URL} from "../Utils/constants";
 
 const MovieCard=({posterPath})=>{
+    if(!posterPath) return
+
     return (
         <div >
             <div className="w-48  pr-2">
