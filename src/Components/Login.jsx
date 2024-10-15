@@ -85,7 +85,7 @@ const Login=()=>{
 
         <div className={""}>
             <Header/>
-            <div className={"absolute bg-black"}>
+            <div className={"fixed bg-black"}>
                 <img
                     src={BG_URL}
                     alt="bg"
