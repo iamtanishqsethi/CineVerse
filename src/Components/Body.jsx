@@ -2,6 +2,7 @@ import Login from "./Login";
 import Browse from "./Browse";
 import {createBrowserRouter, useNavigate} from "react-router-dom";
 import {RouterProvider} from "react-router-dom";
+import MovieDescription from "./MovieDescription";
 
 
 const Body=()=>{
@@ -17,6 +18,10 @@ const Body=()=>{
         {
             path:"/browse",
             element:<Browse/>
+        },
+        {
+            path:"/movie/:movieId",
+            element:<MovieDescription/>
         }
     ])
 

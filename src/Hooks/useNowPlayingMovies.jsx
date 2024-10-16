@@ -6,7 +6,7 @@ import {useEffect} from "react";
 const useNowPlayingMovies = () => {
     const dispatch = useDispatch();
 
-    const nowPlayingMovies = useSelector(store=>store.movies.nowPlayingMovies);
+    const nowPlayingMovies = useSelector(store=>store?.movies?.nowPlayingMovies);
 
 
     const getNowplayingMovies= async ()=>{
@@ -16,7 +16,7 @@ const useNowPlayingMovies = () => {
         dispatch(addNowPlayingMovie(json.results));
     }
     useEffect(() => {
-        getNowplayingMovies()
+        !nowPlayingMovies && getNowplayingMovies()
 
     }, []);
 }

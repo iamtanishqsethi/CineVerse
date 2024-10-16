@@ -18,7 +18,7 @@ const Browse=()=>{
     const showGPTSearch=useSelector(store=>store.gpt.showGPT)
 
     return(
-        <div >
+        <div className="overflow-x-hidden">
             <Header/>
             {/*
             main video container
