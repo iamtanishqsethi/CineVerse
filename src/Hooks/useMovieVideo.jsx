@@ -18,7 +18,7 @@ const useMovieVideo = (movieId) => {
 
         const filteredData=json?.results?.filter((video)=>video.type==="Trailer")
         const trailer=filteredData.length ?
-            filteredData[0]:json.results[0];//if not trailer just take the first video available
+            filteredData[0]:json?.results[0];//if not trailer just take the first video available
 
         dispatch(addTrailerVideo(trailer))
 
