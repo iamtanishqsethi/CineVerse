@@ -6,7 +6,7 @@ export const API_OPTIONS = {
     method: 'GET',
     headers: {
         accept: 'application/json',
-        Authorization: 'Bearer' + process.env.REACT_APP_TMDB_KEY
+        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5ZjY3MWY2OWFmOGEwNzQxMmFmMjZlYzkzZTg5ZTVmNyIsIm5iZiI6MTcyODczMzQ0MC43MjU1MDcsInN1YiI6IjY3MGE1ZjgzZjU4YTkyMDZhYTQwNjdhMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.1yUKThCgTUTmrA2qLJRirUsDPf6nlgC_wiyKahtHCL4'
     }
 };
 export const YOUTUBE_URL="https://www.youtube.com/watch?v="

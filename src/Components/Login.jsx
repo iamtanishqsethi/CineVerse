@@ -25,7 +25,7 @@ const Login=()=>{
         //validate the form
         const message =checkValidData(email.current.value,password.current.value)
         setErrorMessage(message)
-        console.log(message)
+        // console.log(message)
         if(message) return;//don't go ahead
 
         //create a new user
@@ -89,13 +89,13 @@ const Login=()=>{
                 <img
                     src={BG_URL}
                     alt="bg"
-                    className={"opacity-60"}
+                    className={"opacity-60 h-screen object-cover md:h-full"}
                 />
             </div>
             <form
                 onSubmit={(e) => e.preventDefault()}
-                className={"w-3/12 absolute p-12 bg-black bg-opacity-80 mx-auto my-32 right-0 left-0 text-white"}>
-                <h1 className={"font-bold text-3xl py-4 "}>{isSignInForm ? "Sign In" : "Sign Up"}</h1>
+                className={" w-11/12 md:w-3/12 absolute p-12 bg-black bg-opacity-80 mx-auto my-32 right-0 left-0 text-white"}>
+                <h1 className={"font-bold text-xl md:text-3xl py-4 "}>{isSignInForm ? "Sign In" : "Sign Up"}</h1>
                 {!isSignInForm &&
                     <input ref={name}
                            type="text" placeholder={"Name"}

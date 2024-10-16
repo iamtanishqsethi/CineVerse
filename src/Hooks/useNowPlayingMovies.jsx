@@ -16,8 +16,8 @@ const useNowPlayingMovies = () => {
         dispatch(addNowPlayingMovie(json.results));
     }
     useEffect(() => {
-        !nowPlayingMovies &&
-            getNowplayingMovies()
+        getNowplayingMovies()
+
     }, []);
 }
 export default useNowPlayingMovies
