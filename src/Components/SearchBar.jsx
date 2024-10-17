@@ -59,7 +59,7 @@ const SearchBar=()=>{
                     ref={searchText}
                     className="p-4 m-4 col-span-9"
                        type="text" placeholder={lang[langValue]?.searchPlaceholder}/>
-                <button className="col-span-3 py-2 px-4 m-4 bg-red-600 text-white rounded-lg"
+                <button className="col-span-3 py-2 px-4 m-4 bg-blue-500 text-white rounded-lg"
                 onClick={handleGPTSearchClick}
                 >{lang[langValue]?.search}</button>
             </form>

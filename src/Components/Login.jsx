@@ -110,12 +110,12 @@ const Login=()=>{
                     className={"p-4 my-2 w-full bg-zinc-900 bg-opacity-60 rounded border-gray-50"}/>
                 <p className={"text-red-500 font-bold py-2 "}>{errorMessage}</p>
                 <button
-                    className={"p-2 my-4 bg-red-600 w-full rounded font-bold"}
+                    className={"p-2 my-4 bg-blue-500 w-full rounded font-bold"}
                     onClick={handleButtonClick}
 
                 >{isSignInForm ? "Sign In" : "Sign Up"}</button>
                 <p className={"py-6 text-gray-400 cursor-pointer hover:text-white"}
-                   onClick={() => toggleSignIn()}>{isSignInForm ? "New to Netflix ? Sign Up now " : "Already a User ? Sign In Now "}</p>
+                   onClick={() => toggleSignIn()}>{isSignInForm ? "New to Cineverse ? Sign Up now " : "Already a User ? Sign In Now "}</p>
             </form>
 
         </div>

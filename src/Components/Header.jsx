@@ -67,7 +67,7 @@ const Header=()=>{
             <img
                 src={LOGO}
                 alt="logo"
-                className={"w-40  mx-auto md:mx-0"}
+                className={"w-44  mx-auto md:mx-0"}
             />
             {user && <div className={"flex justify-center p-2"}>
                 {showGptSearch && <select className="p-2 m-2 bg-gray-600 bg-opacity-50 text-white rounded"
@@ -80,7 +80,7 @@ const Header=()=>{
                </button>
                 <img src={user?.photoURL}
                      alt="user icon " className={"hidden md:block w-12 h-12 m-2"}/>
-                <button className={"text-white bg-red-600 font-bold rounded p-2 m-2"}
+                <button className={"text-white bg-blue-500 font-bold rounded p-2 m-2"}
                         onClick={handleSignOut}
                 >Sign Out
                 </button>

@@ -19,7 +19,7 @@ const MovieDescription = () => {
                 <img
                     src={LOGO}
                     alt="logo"
-                    className={"w-40  mx-auto md:mx-0"}
+                    className={"w-44  mx-auto md:mx-0"}
                 />
                 <button className="bg-gray-600 py-2 m-2 px-6 rounded font-medium text-white bg-opacity-45"
                 onClick={()=>navigate("/browse")}>Browse</button>
