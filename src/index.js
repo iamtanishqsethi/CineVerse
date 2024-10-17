@@ -6,9 +6,9 @@ import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React>
+  // <React>
     <App />
-  </React>//everything will happen twice in local due to strict mode
+  // </React>//everything will happen twice in local due to strict mode
     //react does extra rendering to check inconsistency in rendering cycles
 );
 
