@@ -1,7 +1,7 @@
 import {API_OPTIONS, BG_URL} from "../Utils/constants"
 import lang from "../Utils/languageConstants";
 import {useDispatch, useSelector} from "react-redux";
-import {useRef} from "react";
+import {useRef,useState} from "react";
 import model from "../Utils/gemini";
 import {addGptMovieResults} from "../Utils/gptSlice";
 
@@ -10,6 +10,7 @@ const SearchBar=()=>{
     const dispatch = useDispatch();
     const langValue=useSelector((store)=>store.config.lang)
     // console.log(langValue)
+    const [value,setValue]=useState()
 
     const fetchMovieResults=async (movieName)=>{
         const data = await fetch('https://api.themoviedb.org/3/search/movie?query='+movieName+'&include_adult=true&page=1', API_OPTIONS)
@@ -54,11 +55,14 @@ const SearchBar=()=>{
     return(
         <div className=" pt-[45%] md:pt-[10%] flex items-center justify-center">
 
-            <form className=" w-full md:w-1/2 bg-black grid grid-cols-12 rounded-lg" onSubmit={(e)=>e.preventDefault()}>
+            <form className=" w-full md:w-1/2 bg-black bg-opacity-70 grid grid-cols-12 rounded-lg" onSubmit={(e)=>e.preventDefault()}>
                 <input
+                    value={value}
                     ref={searchText}
-                    className="p-4 m-4 col-span-9"
-                       type="text" placeholder={lang[langValue]?.searchPlaceholder}/>
+                    className="p-4 m-4 col-span-9 bg-gray-600 bg-opacity-80  text-white rounded"
+                       type="text" placeholder={lang[langValue]?.searchPlaceholder}
+                    onChange={(e)=>setValue(e.target.value)}
+                />
                 <button className="col-span-3 py-2 px-4 m-4 bg-blue-500 text-white rounded-lg"
                 onClick={handleGPTSearchClick}
                 >{lang[langValue]?.search}</button>

@@ -2,8 +2,7 @@ import {API_OPTIONS} from "../Utils/constants";
 import {addTrailerVideo} from "../Utils/movieSlice";
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-//TODO: not working with the hook now need to fix it
-//getting undefined length property type error
+
 
 const useMovieVideo = (movieId) => {
     const dispatch = useDispatch();

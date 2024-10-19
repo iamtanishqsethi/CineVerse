@@ -76,7 +76,7 @@ const Header=()=>{
                 </select>}
                 <button className="bg-gray-600 py-2 m-2 px-6 rounded font-medium text-white bg-opacity-45"
                onClick={handleSearchClick}>
-                   {!showGPT?"GPT search":"Browse"}
+                   {!showGPT?"AI search":"Browse"}
                </button>
                 <img src={user?.photoURL}
                      alt="user icon " className={"hidden md:block w-12 h-12 m-2"}/>

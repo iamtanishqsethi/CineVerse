@@ -1,19 +1,18 @@
 import {useNavigate, useParams} from "react-router-dom";
 import useMovieDetails from "../Hooks/useMovieDetails";
 import {useSelector} from "react-redux";
-import Header from "./Header";
 import {BG_URL, IMG_URL, LOGO} from "../Utils/constants";
 
 const MovieDescription = () => {
     const {movieId} = useParams();
-    console.log(movieId)
+    // console.log(movieId)
     useMovieDetails(movieId)
-    const details=useSelector((store)=>store.movies.movieDetails)
-    console.log(details)
+    const details=useSelector((store)=>store?.movies?.movieDetails)
+    // console.log(details)
     const navigate=useNavigate()
 
     return (
-        <div >
+        <div>
             <div
                 className={"  absolute px-4 py-2 bg-gradient-to-b from-black z-10 w-full flex flex-col md:flex-row  md:justify-between  "}>
                 <img
@@ -22,12 +21,20 @@ const MovieDescription = () => {
                     className={"w-44  mx-auto md:mx-0"}
                 />
                 <button className="bg-gray-600 py-2 m-2 px-6 rounded font-medium text-white bg-opacity-45"
-                onClick={()=>navigate("/browse")}>Browse</button>
-            </div >
+                        onClick={() => navigate("/browse")}>Browse
+                </button>
+            </div>
+            <div className={"fixed bg-black"}>
+                <img
+                    src={BG_URL}
+                    alt="bg"
+                    className={"opacity-60 h-screen object-cover md:h-full"}
+                />
+            </div>
             <div
-                className="bg-gradient-to-br from-black to-zinc-800 w-screen h-screen flex flex-col items-center justify-center ">
+                className="w-11/12 md:w-11/12 absolute p-12 bg-black bg-opacity-80 mx-auto my-32 right-0 left-0 text-white">
                 <div
-                    className=" mx-auto w-10/12 px-12  my-0 text-white flex items-center justify-between bg-black rounded-lg">
+                    className="flex flex-col md:flex-row items-center">
                     <div className="px-4">
                         <h1 className="text-5xl my-4 font-bold">{details?.original_title}</h1>
                         <h2 className="text-gray-400 font-bold text-xl">{details?.tagline}</h2>
