@@ -108,6 +108,20 @@ const Login=()=>{
                     ref={password}
                     type="password" placeholder={"Password"}
                     className={"p-4 my-2 w-full bg-zinc-900 bg-opacity-60 rounded border-gray-50"}/>
+                {!isSignInForm &&
+                    <div className="p-2 m-2">
+                        <p className="text-gray-500  font-medium">
+                            Password must contain :
+                            <ul className="text-gray-500 text-[12px] leading-4  font-medium">
+                                <li>Atleast 8 Characters</li>
+                                <li>Atleast 1 Uppercase character</li>
+                                <li>Atleast 1 Special character</li>
+                                <li>Atleast 1 Number</li>
+
+                            </ul>
+                        </p>
+                    </div>
+                }
                 <p className={"text-red-500 font-bold py-2 "}>{errorMessage}</p>
                 <button
                     className={"p-2 my-4 bg-blue-500 w-full rounded font-bold"}
